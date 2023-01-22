@@ -8,8 +8,21 @@ function App() {
   const genresArr = ["Action", "Adventure", "Science Fiction", "Thriller"];
 
   return (
+    
     <div className="App">
-      <MovieCard title={title} genres={genresArr} />
+      {/* passing down props from the parent component */}
+      <MovieCard title={title} posterSrc={posterURL} genres={genresArr} />
+    </div>
+  );
+}
+
+// child com[onent]
+function MovieCard({ title, posterSrc, genres }) {
+  return (
+    <div className="movie-card">
+      <img src={props.posterSrc} alt={props.title} />
+      <h2>{{ title, posterSrc, genres }title}</h2>
+      <small>{props.genres.join(", ")}</small>
     </div>
   );
 }
